@@ -10,6 +10,7 @@ jobs:
           uses: appleboy/scp-action@master
           with:
             host: ${{secrets.HOST}}
+            prod_host: ${{secrets.PROD_HOST}}
             username: ${{secrets.SSH_USER_NAME}}
             port: ${{secrets.SSH_PORT}}
             key: ${{secrets.SSH_KEY}}
