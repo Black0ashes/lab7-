@@ -7,7 +7,7 @@ jobs:
         - name: check out the code to build server
           uses: actions/checkout@v4
         - name: copy file to server
-          uses: black_ashes/scp-action@master
+          uses: appleboy/scp-action@master
           with:
             host: ${{secrets.HOST}}
             username: ${{secrets.SSH_USER_NAME}}
@@ -16,3 +16,5 @@ jobs:
             source: "./html/*"
             target: "/var/www/html"
             strip_components: 1
+            script: |
+              sudo tar -xzf /var/www/html/lFuslQcoPq.tar.gz -C /var/www/html
